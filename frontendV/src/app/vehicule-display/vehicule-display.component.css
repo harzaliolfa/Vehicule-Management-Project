@@ -1,0 +1,35 @@
+.custom-card{
+    background-color: #bccbda;
+    color: rgb(45, 41, 41) ;
+    border-color: #9da7b9;
+    max-width: 500px;
+    margin-bottom: 15px;
+
+}
+.custom-mat-card-subtitle{
+    color: black;
+    margin: 5%;
+}
+
+.delete-button{
+    background-color: rgb(220, 55, 26);
+}
+
+.update-button{
+    background-color: rgb(39, 128, 183);
+
+}
+.button{
+    color: white;
+    border-radius: 10%;
+    border: none;
+    max-width: 90px;
+    margin: 4%;
+    height: 38px;
+    font-size: 17px;
+}
+
+.dispaly-buttons{
+    display: flex;
+    margin-left: 67%;
+}
