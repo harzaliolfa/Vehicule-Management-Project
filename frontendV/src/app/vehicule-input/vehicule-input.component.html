@@ -1,0 +1,27 @@
+<form 
+ class="vehicule-form example-form" (ngSubmit)="onSubmit()">
+ 
+    <mat-form-field class="example-full-width">
+      <mat-label>Brand</mat-label>
+      <input matInput placeholder="" value="Ferrari" name="brand" ngModel/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Model</mat-label>
+      <input matInput placeholder="" value="Ferrari" name="model" ngModel/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Year</mat-label>
+      <input matInput placeholder="" value="2025"  name="year" ngModel/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Color</mat-label>
+      <input matInput placeholder="" value="Black" name="color" ngModel/>
+    </mat-form-field>
+
+    <div class="example-button-row">
+      <button mat-button class="custom-btn" type="submit">Submit</button>
+    </div>
+</form>

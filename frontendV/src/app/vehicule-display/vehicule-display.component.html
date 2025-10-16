@@ -1,0 +1,20 @@
+<div>
+  <mat-card class="custom-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>
+        Brand: {{ vehicule.brand.toLocaleUpperCase() }} Model:
+        {{ vehicule.model }}</mat-card-title
+      >
+      <mat-card-subtitle class="custom-mat-card-subtitle">
+        Year: {{ vehicule.year }} Color:
+        {{ vehicule.color.toLocaleUpperCase() }}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <div class="dispaly-buttons">
+      <button matButton="elevated" class="update-button button" (click)="editItemEvent.emit(vehicule.id)">Update</button>
+      <button matButton="elevated" class="delete-button button" (click)="removeItemEvent.emit(vehicule.id)">
+        Delete
+      </button>
+    </div>
+  </mat-card>
+</div>

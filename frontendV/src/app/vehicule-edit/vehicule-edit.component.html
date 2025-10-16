@@ -1,0 +1,30 @@
+<!--and in the html instead of using the ngForm , 
+I will bind each input element to a field in the vehicule object-->
+
+<form  class="vehicule-form example-form" (ngSubmit)="onSubmit()">
+ 
+    <mat-form-field class="example-full-width">
+      <mat-label>Brand</mat-label>
+      <!--now it's a double binding , input output of the ngModel -->
+      <input matInput placeholder="" value="Ferrari" name="brand" [(ngModel)]="vehicule.brand"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Model</mat-label>
+      <input matInput placeholder="" value="Ferrari" name="model" [(ngModel)]="vehicule.model"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Year</mat-label>
+      <input matInput placeholder="" value="2025"  name="year" [(ngModel)]="vehicule.year"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Color</mat-label>
+      <input matInput placeholder="" value="Black" name="color" [(ngModel)]="vehicule.color"/>
+    </mat-form-field>
+
+    <div class="example-button-row">
+      <button mat-button class="custom-btn" type="submit">Save</button>
+    </div>
+</form>
