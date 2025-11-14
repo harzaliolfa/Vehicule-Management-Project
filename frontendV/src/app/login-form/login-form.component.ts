@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class LoginFormComponent {
 @Output() onSubmitLoginEvent = new EventEmitter();
-  @Output() onSubmitRegisterEvent = new EventEmitter();
+@Output() onSubmitRegisterEvent = new EventEmitter();
 
 	active: string = "login";
   firstName: string = "";
