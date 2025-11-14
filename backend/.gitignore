@@ -1,10 +1,14 @@
+# Global ignores (anywhere in the project)
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
+
+### Exceptions for Maven/Gradle build folders ###
+# Keep target folders inside src/main and src/test
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### STS ###
+### Spring Tool Suite (STS) ###
 .apt_generated
 .classpath
 .factorypath
@@ -14,20 +18,22 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr
 
 ### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
 build/
+# Keep build folders inside src/main and src/test
 !**/src/main/**/build/
 !**/src/test/**/build/
 
 ### VS Code ###
 .vscode/
+.env/
