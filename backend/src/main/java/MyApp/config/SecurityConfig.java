@@ -10,17 +10,21 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 @RequiredArgsConstructor
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+    private final UserAuthProvider userAuthProvider;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
 
         // Disable csrf because we'll use jwt auth
         httpSecurity.csrf(AbstractHttpConfigurer::disable)
+                // I placed this filter before the basic authentication filter, because I want it to be the main authentication filter
+                .addFilterBefore(new JwtAuthFilter(userAuthProvider), BasicAuthenticationFilter.class)
                 .cors(Customizer.withDefaults())
                 // Here we disabled session policy
                 .sessionManagement(customizer ->

@@ -13,9 +13,7 @@ import { LoginContentComponent } from './login-content/login-content.component';
 @Component({
   selector: 'app-root',
   imports: [
-    VehiculeInputComponent,
     CommonModule,
-    VehiculeWrapperComponent,
     HeaderComponent,
     LoginContentComponent
     
