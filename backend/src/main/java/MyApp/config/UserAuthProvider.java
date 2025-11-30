@@ -17,6 +17,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
@@ -24,7 +25,6 @@ import java.util.Collections;
 import java.util.Date;
 
 // This class create and validate the JWT
-@RequiredArgsConstructor
 @Component
 public class UserAuthProvider {
 
@@ -32,8 +32,14 @@ public class UserAuthProvider {
     @Value("${security.jwt.token.secret-key:secret-key}")
     private String secretKey;
 
-    private UserRepository userRepository;
-    private UserMapper userMapper;
+    private final UserRepository userRepository;
+    private final UserMapper userMapper;
+
+    public  UserAuthProvider(UserRepository userRepository, UserMapper userMapper ){
+        this.userRepository = userRepository;
+        this.userMapper = userMapper;
+
+    }
 
     // This is to avoid having the raw secret key available in the jvm
     @PostConstruct

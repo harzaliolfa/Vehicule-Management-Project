@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { Vehicule } from '../models/vehicule';
 import { HttpClient } from '@angular/common/http';
+import { VehiculeInputComponent } from "../vehicule-input/vehicule-input.component";
 
 @Component({
   selector: 'app-vehicule-display',

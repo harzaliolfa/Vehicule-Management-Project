@@ -1,4 +1,9 @@
 <header class="app-header">
    <!--     <img src="{{logoSrc}}" class="app-logo" alt="logo">  --> 
-    <h1 class="app-title">{{pageTitle}}</h1>
+    <h1 (click)="redirectToHome()" class="app-title">Vehicules App</h1>
+    <button  type="submit" class="btn btn-primary btn-block mb-3" *ngIf="!auth.isLoggedIn()" (click)="onLoginClick()">Login</button>
+    <button type="submit" class="btn btn-primary btn-block mb-3" *ngIf="!auth.isLoggedIn()" (click)="onRegisterClick()">Register</button>
+
+    <button class="btn btn-primary btn-block mb-3" *ngIf="auth.isLoggedIn()" (click)="onLogoutClick()" >Logout</button>
+
 </header>

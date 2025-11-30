@@ -7,11 +7,15 @@ import org.mapstruct.Mapper;
 import MyApp.entities.User;
 import org.mapstruct.Mapping;
 
+import java.util.List;
+
 
 @Mapper(componentModel =  "spring")
 public interface UserMapper {
 
     UserDto toUserDto(User user);
+
+   // List<UserDto> toUserDtos(List<User>);
 
     // We ignored the password because it has different format
     // It has a char [] in the registerDTO and a string in the user object

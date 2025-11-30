@@ -1,4 +1,4 @@
-<p>
+<div>
     <app-vehicule-edit
     *ngIf="editable == true"
     (editDataEvent)= "handleSaveEdition($event)"
@@ -10,4 +10,4 @@
     (editItemEvent)="handleEditClick()"
     [vehicule]="vehicule"
   />
-</p>
+</div>

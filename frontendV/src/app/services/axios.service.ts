@@ -13,23 +13,19 @@ export class AxiosService{
     }
 
     getAuthToken(): string | null{
-        return window.localStorage.getItem("auth_token");
+        return window.localStorage.getItem('token');
     }
 
     setAuthToken(token : string | null){
         if(token !== null){
-            window.localStorage.setItem("auth_token", token);
+            window.localStorage.setItem('token', token);
         } else{
-            window.localStorage.removeItem("auth_token");
+            window.localStorage.removeItem('token');
         }
     }
 
     request(method: string, url: string, data : any): Promise<any>{
 
-        let headers = {};
-        if(this.getAuthToken() !=null){
-            headers = {"Authorization": "Bearer " + this.getAuthToken()}
-        }
         return axios({
             method: method,
             url: url,

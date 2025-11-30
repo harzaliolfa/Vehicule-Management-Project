@@ -7,6 +7,8 @@ import MyApp.mappers.VehiculeMapper;
 import MyApp.repository.VehiculeRepository;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -18,7 +20,7 @@ public class VehiculeService {
 
     private final VehiculeRepository vehiculeRepository;
     private final VehiculeMapper vehiculeMapper;
-
+    private static final Logger log = LoggerFactory.getLogger(VehiculeService.class);
 
     public VehiculeDto getVehicule(Long id) {
        Vehicule vehicule = vehiculeRepository.findById(id).orElseThrow(
@@ -32,6 +34,7 @@ public class VehiculeService {
 
     public VehiculeDto createVehicule(@Valid VehiculeDto vehiculeDto) {
         Vehicule vehicule = vehiculeMapper.toVehicule(vehiculeDto);
+        log.debug("New Vehicule added {}", vehicule);
         return vehiculeMapper.toVehiculeDto(vehiculeRepository.save(vehicule)) ;
     }
 

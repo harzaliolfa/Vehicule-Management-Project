@@ -27,8 +27,9 @@ export class VehiculeInputComponent {
     this.http
       .post<Vehicule>(
         'http://localhost:8080/vehicules',
-        this.vehiculeForm.value
+        this.vehiculeForm.value,
       )
       .subscribe((vehiculeData) => this.newDataEvent.emit(vehiculeData));
+      console.log("sent object ", this.vehiculeForm.value )
   }
 }

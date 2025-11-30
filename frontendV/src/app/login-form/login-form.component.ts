@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login-form',
@@ -10,29 +12,20 @@ import { FormsModule } from '@angular/forms';
   standalone: true
 })
 export class LoginFormComponent {
-@Output() onSubmitLoginEvent = new EventEmitter();
-@Output() onSubmitRegisterEvent = new EventEmitter();
 
+
+constructor(public router :Router,private auth : AuthService){}
 	active: string = "login";
   firstName: string = "";
   lastName: string = "";
   login: string = "";
   password: string = "";
 
-	onLoginTab(): void {
-		this.active = "login";
-	}
-
-	onRegisterTab(): void {
-		this.active = "register";
-	}
 
   onSubmitLogin(): void {
-    this.onSubmitLoginEvent.emit({"login": this.login, "password": this.password});
+    this.auth.login({"login": this.login, "password": this.password})
   }
 
-  onSubmitRegister(): void {
-    this.onSubmitRegisterEvent.emit({"firstName": this.firstName, "lastName": this.lastName, "login": this.login, "password": this.password});
-  }
+
 
 }

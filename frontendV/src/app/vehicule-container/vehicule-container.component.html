@@ -1,0 +1,9 @@
+ <h1>Add a new Vehicule</h1>
+  <app-vehicule-input (newDataEvent)="appendData($event)" />
+
+  <h2>My Vehicule list</h2>
+  <app-vehicule-wrapper
+    *ngFor="let vehicule of vehicules"
+    (removeItemEvent)="removeItem($event)"
+    [vehicule]="vehicule"
+  />
